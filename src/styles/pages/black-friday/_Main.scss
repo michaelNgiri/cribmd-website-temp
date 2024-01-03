@@ -1,0 +1,116 @@
+.tcLink {
+  &:hover,
+  &:focus {
+    font-weight: bold;
+  }
+  cursor: pointer;
+  font-size: 1rem * 0.9;
+}
+
+.countDownGrid {
+  border: 0.0625em solid #e6e9ef;
+  box-shadow: 0 0.125em 0.25rem rgba(17, 17, 17, 0.04);
+  border-radius: 1em;
+  min-height: 3em;
+  display: grid;
+  background-color: #fbfbfb;
+  gap: 0.0625em;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+    width: 7.8rem;
+  }
+
+  div {
+    &:hover,
+    &:focus {
+      transition: 0.5s;
+      transform: scale(1.25);
+    }
+  }
+}
+
+.countDownItem {
+  box-shadow: 0.0625em 0.0625em 0 #e6e9ef;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  overflow: hidden;
+  background-color: white;
+  justify-content: center;
+  flex-direction: column;
+
+  .item {
+    font-size: 3rem;
+    display: block;
+  }
+  .interval {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .countDownGrid {
+    border-radius: 0.75em;
+    min-height: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .countDownGrid {
+    min-height: 8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .countDownGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.dealOptionCard {
+  border-radius: $br;
+  padding: $br * 0.75;
+  background-color: $bg-lightblue;
+
+  h5 {
+    color: $theme-primary-v4;
+  }
+
+  p {
+    color: $heading-default;
+  }
+
+  img {
+    width: 450px;
+  }
+}
+
+.mediaItemContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 1em;
+  min-height: 100%;
+  // margin: 0 0.5em;
+  min-width: calc(100% - 1em);
+  margin: 0.5em;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 0.0625rem solid $theme-tertiary-v9;
+
+  &:hover {
+    box-shadow: $button-box-shadow;
+  }
+}
+
+.mediaImageContainer {
+  iframe {
+    min-height: 35em;
+    width: 100%;
+  }
+  min-height: 20em;
+  overflow: hidden;
+  justify-content: center;
+}

@@ -1,0 +1,118 @@
+@use 'constants';
+
+$timing-func_mode: 1s // cubic-bezier(0.5, -0.25, 0.25, 1.125) both;
+  cubic-bezier(0.1, 1, 0.35, 1) both;
+
+// translateFadeIn animations
+
+[data-anim*='fade'] {
+  opacity: 0;
+}
+
+// [data-animate_targets='false'] {
+//   [class*='anim__'] {
+//     animation-name: anim__fadeOut !important;
+//   }
+// }
+
+[class*='anim__'] {
+  will-change: transform;
+}
+
+@include anim__('fadeIn', null);
+@include anim__('fadeIn', 'Up');
+@include anim__('fadeIn', 'Down');
+@include anim__('fadeIn', 'Left');
+@include anim__('fadeIn', 'Right');
+@include anim__('fadeIn', 'Up', 'Big');
+@include anim__('fadeIn', 'Down', 'Big');
+@include anim__('fadeIn', 'Left', 'Big');
+@include anim__('fadeIn', 'Right', 'Big');
+
+@include anim__('fadeOut', null);
+@include anim__('fadeOut', 'Up');
+@include anim__('fadeOut', 'Down');
+@include anim__('fadeOut', 'Left');
+@include anim__('fadeOut', 'Right');
+@include anim__('fadeOut', 'Up', 'Big');
+@include anim__('fadeOut', 'Down', 'Big');
+@include anim__('fadeOut', 'Left', 'Big');
+@include anim__('fadeOut', 'Right', 'Big');
+
+@include anim__('In', 'Up');
+@include anim__('In', 'Down');
+@include anim__('In', 'Left');
+@include anim__('In', 'Right');
+@include anim__('In', 'Up', 'Big');
+@include anim__('In', 'Down', 'Big');
+@include anim__('In', 'Left', 'Big');
+@include anim__('In', 'Right', 'Big');
+
+@include anim__('Out', null);
+@include anim__('Out', 'Up');
+@include anim__('Out', 'Down');
+@include anim__('Out', 'Left');
+@include anim__('Out', 'Right');
+@include anim__('Out', 'Up', 'Big');
+@include anim__('Out', 'Down', 'Big');
+@include anim__('Out', 'Left', 'Big');
+@include anim__('Out', 'Right', 'Big');
+
+@keyframes anim__buttonPressed {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes anim__fadeOutScaleIn {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.anim__mode--backwards {
+  animation-fill-mode: backwards !important;
+}
+
+.anim__mode--forwards {
+  animation-fill-mode: forwards !important;
+}
+
+.anim__dur--025s {
+  animation-duration: 0.25s !important;
+}
+
+.anim__dur--05s {
+  animation-duration: 0.5s !important;
+}
+
+.anim__dur--1s {
+  animation-duration: 1s !important;
+}
+
+.anim__del--025s {
+  animation-delay: 0.25s !important;
+}
+
+.anim__del--05s {
+  animation-delay: 0.5s !important;
+}
+
+.anim__del--075s {
+  animation-delay: 0.75s !important;
+}
+
+.anim__del--1s {
+  animation-delay: 1s !important;
+}

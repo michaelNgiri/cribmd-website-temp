@@ -1,0 +1,48 @@
+.FreeConsultation {
+  .inputs-wrapper {
+    display: grid;
+    gap: 0.5em;
+  }
+
+  button[type='submit'] {
+    $purple: rgb(51 57 188);
+
+    color: white !important;
+    background-color: $purple;
+    width: 100%;
+    max-width: 15em;
+
+    &:hover,
+    &:focus {
+      color: $purple !important;
+      background-color: transparent;
+      border-color: $purple;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .inputs-wrapper {
+      // gap: 0.5em;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+    }
+
+    // button[type='submit'] {
+    //   transform: translateX(50%);
+    // }
+
+    .Input {
+      &.fullname {
+        grid-column: 1 / 3;
+      }
+
+      &.email {
+        grid-column: 1 / 2;
+      }
+
+      &.phone {
+        grid-column: 2 / 3;
+      }
+    }
+  }
+}

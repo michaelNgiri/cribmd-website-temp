@@ -1,0 +1,118 @@
+.Advert {
+  header {
+    background: rgba(238, 242, 255, 1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    $size: 10em;
+
+    &::before,
+    &::after {
+      @include before-or-after(
+        $bg: linear-gradient(to bottom, rgba(206, 194, 241, 1), rgba(210, 220, 253, 1)),
+        $w: $size,
+        $h: $size,
+        $zi: 1,
+        $br: 50%,
+        $t: unset
+      );
+    }
+
+    &::before {
+      top: 5.125em;
+      left: -6em;
+    }
+
+    &::after {
+      left: unset;
+      right: -1.5em;
+      bottom: 4em;
+    }
+
+    img {
+      width: 12.5em;
+      height: 10.5em;
+    }
+  }
+
+  .__body-action-card {
+    $bg: rgb(49, 46, 129);
+
+    background: $bg;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5em;
+    color: white;
+    border-radius: 0.75em;
+    margin-top: 2.5em;
+
+    $size: 30em;
+
+    &::before,
+    &::after {
+      @include before-or-after(
+        $bg: rgb(114, 86, 185),
+        $w: $size,
+        $h: $size,
+        $zi: 0,
+        $br: 50%,
+        $t: unset
+      );
+      filter: blur(3em);
+      // background: rgba(25, 34, 245, 0.25);
+    }
+
+    &::before {
+      bottom: 20%;
+      left: $size / -1.35;
+      background: #4e4fab;
+    }
+
+    &::after {
+      left: unset;
+      right: $size / -2;
+      top: 25%;
+      opacity: 0.7;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+
+    .Button {
+      color: $bg !important;
+      background: white;
+
+      &:focus,
+      &:hover {
+        background: transparent;
+        color: white !important;
+        border-color: white;
+
+        path {
+          stroke: white;
+        }
+      }
+
+      path {
+        stroke: $bg;
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    h2 {
+      font-size: 1.5em;
+    }
+  }
+
+  // section {
+  //   @extend .anim__fadeInUp;
+  // }
+}

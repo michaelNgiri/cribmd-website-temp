@@ -1,0 +1,41 @@
+@import '../../constants';
+
+.Main {
+  @media screen and (min-width: 768px) {
+    &,
+    p {
+      max-width: 43em;
+    }
+  }
+
+  section {
+    padding: 1em 0;
+
+    > a {
+      display: block;
+    }
+  }
+
+  h2 {
+    text-transform: uppercase;
+
+    a {
+      color: $theme-primary-v3;
+      font-weight: inherit;
+    }
+  }
+
+  ol,
+  ul {
+    padding-left: 2em;
+  }
+
+  li {
+    padding: 0 0 0 1em;
+
+    ol {
+      padding-left: 1.25em;
+      list-style-type: upper-alpha;
+    }
+  }
+}

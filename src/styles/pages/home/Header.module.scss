@@ -1,0 +1,142 @@
+@import '../../constants';
+
+.hero {
+  background-color: rgba(25, 113, 245, 0.05);
+  border-radius: 1.5em;
+  padding: 2.5em 1.25em;
+  overflow: hidden;
+  min-height: 40em; // fallback for browsers that may not support 'clamp'
+  // margin-top: 5em;
+  min-height: clamp(30em, 80vh, 40em);
+  position: relative;
+
+  @media screen and (max-width: 575px) {
+    margin-left: -1.25em;
+    margin-right: -1.25em;
+    margin-top: 0;
+    padding-top: 5em;
+    width: calc(100% + 2.5em);
+    border-radius: 0;
+
+    .blurredEllipse {
+      opacity: 0.75;
+    }
+  }
+
+  h1 {
+    overflow: hidden;
+
+    > span {
+      display: inline-block;
+      overflow: hidden;
+    }
+  }
+
+  a {
+    background-color: #2f2d9d; // rgb(91, 18, 181); // rgba(128, 0, 128, 0.85);
+    color: white !important;
+    box-shadow: 0 0.375em 2em rgba(81, 8, 171, 0.125);
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.after {
+  @include before-or-after($bg: transparent);
+  overflow: hidden;
+}
+
+.blurredEllipse {
+  $size: 45em;
+
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(15em);
+  // width: 28em;
+  // height: 28em;
+  width: $size;
+  height: $size;
+  right: 60%;
+  top: 60%;
+  background: rgba(25, 34, 245, 0.25);
+  // filter: blur(454px);
+
+  &.second {
+    left: 60%;
+    bottom: 60%;
+    top: unset;
+  }
+}
+
+.heroImage {
+  margin-top: 1rem;
+  width: 19rem;
+}
+
+.mediaGrid {
+  border: 0.0625em solid #e6e9ef;
+  box-shadow: 0 0.125em 0.25rem rgba(17, 17, 17, 0.04);
+  border-radius: 1em;
+  min-height: 3em;
+  display: grid;
+  background-color: #fbfbfb;
+  gap: 0.0625em;
+  grid-template-columns: 1fr 1fr;
+
+  img {
+    width: 7.8rem;
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      img {
+        transition: 0.5s;
+        transform: scale(1.25);
+      }
+    }
+  }
+}
+
+.medium {
+  box-shadow: 0.0625em 0.0625em 0 #e6e9ef;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  // padding-right: 0.9em;
+  // padding-left: 0.9em;
+  background-color: white;
+  justify-content: center;
+}
+
+@media screen and (min-width: 576px) {
+  .hero {
+    border-radius: 2.5em;
+    // margin-top: 7em;
+  }
+
+  .mediaGrid {
+    border-radius: 0.75em;
+    min-height: 5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heroImage {
+    margin: 2em 0;
+    width: 26rem;
+  }
+
+  .mediaGrid {
+    min-height: 8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .mediaGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

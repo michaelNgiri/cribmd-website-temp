@@ -1,0 +1,194 @@
+.Input {
+  border: 0.075em solid transparent;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  justify-content: center;
+  align-self: flex-start;
+  // min-width: 3.125rem;
+  position: relative;
+  overflow: hidden;
+
+  &.error {
+    &:hover,
+    &:focus-within {
+      input,
+      textarea {
+        border-color: rgba(250, 0, 0) !important;
+      }
+    }
+
+    * {
+      color: rgba(225, 0, 0) !important;
+    }
+
+    input,
+    textarea {
+      border-color: rgba(250, 0, 0, 0.25) !important;
+      background-color: rgba(255, 0, 0, 0.1) !important;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    &.primary {
+      input,
+      textarea {
+        border-color: rgba($prim-r, $prim-g, $prim-b, 0.25);
+      }
+    }
+
+    &.secondary {
+      input,
+      textarea {
+        border-color: rgba($sec-r, $sec-g, $sec-b, 0.25);
+      }
+    }
+
+    &.tertiary {
+      input,
+      textarea {
+        border-color: rgba($tert-r, $tert-g, $tert-b, 0.25);
+      }
+    }
+  }
+
+  &:focus-within {
+    &.primary {
+      input,
+      textarea {
+        border-color: rgba($prim-r, $prim-g, $prim-b, 0.6);
+      }
+    }
+
+    &.secondary {
+      input,
+      textarea {
+        border-color: rgba($sec-r, $sec-g, $sec-b, 0.6);
+      }
+    }
+
+    &.tertiary {
+      input,
+      textarea {
+        border-color: rgba($tert-r, $tert-g, $tert-b, 0.6);
+      }
+    }
+  }
+
+  .label {
+    font-size: 0.875em;
+    font-weight: 500;
+  }
+
+  input:not([type='checkbox']),
+  textarea {
+    padding: 0.75em;
+    font-size: 1em;
+    min-height: 3rem;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: 0.125rem solid transparent;
+
+    &::placeholder {
+      color: rgba($tert-r, $tert-g, $tert-b, 0.85);
+    }
+  }
+
+  p {
+    margin: 0.35em 0 0 0;
+    font-size: 0.7em;
+    white-space: pre-wrap;
+    line-height: 1.35em;
+    text-align: left;
+  }
+}
+
+.input--filled,
+.input--outlined {
+  border-radius: 0.5em;
+}
+
+.input--standard {
+  &.primary {
+    input,
+    textarea {
+      color: $theme-primary-v3;
+      border-bottom-color: rgba($prim-r, $prim-g, $prim-b, 0.5);
+    }
+  }
+
+  &.secondary {
+    input,
+    textarea {
+      color: $theme-secondary-v3;
+      border-bottom-color: rgba($sec-r, $sec-g, $sec-b, 0.5);
+    }
+  }
+
+  &.tertiary {
+    input,
+    textarea {
+      color: $theme-tertiary-v2;
+      border-bottom-color: rgba($tert-r, $tert-g, $tert-b, 0.5);
+    }
+  }
+}
+
+.input--filled {
+  &.primary {
+    input,
+    textarea {
+      color: $theme-primary-v3;
+      background-color: rgba($prim-r, $prim-g, $prim-b, 0.1);
+    }
+  }
+
+  &.secondary {
+    input,
+    textarea {
+      color: $theme-secondary-v3;
+      background-color: rgba($sec-r, $sec-g, $sec-b, 0.1);
+    }
+  }
+
+  &.tertiary {
+    input,
+    textarea {
+      color: $theme-tertiary-v2;
+      background-color: rgba($tert-r, $tert-g, $tert-b, 0.1);
+    }
+  }
+}
+
+.input--outlined {
+  &.primary {
+    input,
+    textarea {
+      color: $theme-primary-v3;
+      background-color: rgba($prim-r, $prim-g, $prim-b, 0.1);
+    }
+  }
+
+  &.secondary {
+    input,
+    textarea {
+      color: $theme-secondary-v3;
+      background-color: rgba($sec-r, $sec-g, $sec-b, 0.1);
+    }
+  }
+
+  &.tertiary {
+    input,
+    textarea {
+      color: $theme-tertiary-v2;
+      background-color: rgba($tert-r, $tert-g, $tert-b, 0.1);
+    }
+  }
+}

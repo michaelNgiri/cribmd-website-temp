@@ -1,0 +1,156 @@
+.Instant1KConsultation {
+  overflow-x: hidden;
+
+  .intro-texts,
+  .register-steps {
+    position: relative;
+    perspective: 5em;
+
+    p {
+      padding: 1.5em;
+    }
+  }
+
+  .animated {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    border-radius: 0.25em;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+
+  .animated.intro-text {
+    font-weight: 500;
+    border: 0.25em solid rgba(238, 242, 255, 1);
+    border-left: none;
+    border-right: none;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    animation-name: animateIntroText;
+  }
+
+  .register-steps {
+    width: 14em;
+    margin: auto;
+    text-align: left;
+    overflow: hidden;
+    transform: translateY(0.75em);
+  }
+
+  $step-bg: rgba(238, 242, 255, 1);
+  $step-box-shadow: none; // 0 0.5em 1.5em rgba(0, 0, 0, 0.05);
+
+  .step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Icon.step-number {
+    font-size: 1.25em;
+    font-weight: 500;
+    background-color: white; // $step-bg;
+    border-radius: 50%;
+    border: 0.0625em solid rgb(218, 222, 235);
+    box-shadow: $step-box-shadow;
+    // margin-left: -3em;
+    right: 50;
+    z-index: 2;
+  }
+
+  .step {
+    padding: 1.25em;
+    border-radius: 1em;
+    margin-top: 2.5em;
+    background-color: $step-bg;
+    border: 0.0625em solid rgb(218, 222, 235);
+    box-shadow: $step-box-shadow;
+
+    strong {
+      display: block;
+      padding-bottom: 1em;
+      margin-top: 1.75em;
+      border-bottom: 0.0625em solid rgb(218, 222, 235);
+    }
+
+    p {
+      padding: 0;
+      margin: 1em 0 0;
+    }
+  }
+
+  .animated.step-number,
+  .animated.step {
+    animation-name: animateStepNumber;
+    animation-timing-function: cubic-bezier(0.35, 1, 0.35, 1);
+  }
+
+  .animated.step {
+    animation-name: animateStep;
+  }
+
+  .invisible-text {
+    visibility: hidden;
+  }
+}
+
+@keyframes animateIntroText {
+  0% {
+    opacity: 0;
+    transform: translateX(50%) rotateY(16deg) scale(0.5);
+  }
+  1%,
+  25% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0) scale(1);
+  }
+  26%,
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) rotateY(-16deg) scale(0.5);
+  }
+}
+
+@keyframes animateStepNumber {
+  0% {
+    opacity: 0;
+    transform: translateY(30em) scale(4);
+  }
+  2%,
+  5% {
+    opacity: 1;
+    transform: translateY(5em) scale(2);
+  }
+  7%,
+  33% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  35%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10em) scale(0.5);
+  }
+}
+
+@keyframes animateStep {
+  0%,
+  5% {
+    opacity: 0;
+    transform: translateY(-5em) scale(0.5);
+  }
+  7%,
+  33% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  38%,
+  100% {
+    opacity: 0;
+    transform: translateY(30em) scale(1);
+  }
+}
